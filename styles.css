@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #121212;
+    color: #e0e0e0;
     margin: 0;
     padding: 0;
 }
@@ -9,9 +10,28 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 10px;
-    background-color: #fff;
+    background-color: #1e1e1e;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-guide {
+    margin-bottom: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-guide li {
+    margin-bottom: 10px;
 }
 
 .control-frame {
@@ -26,19 +46,22 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    background-color: #333;
+    color: #e0e0e0;
 }
 
 .control-frame button:hover {
-    background-color: #ddd;
+    background-color: #555;
 }
 
 .listbox-frame {
     max-height: 300px;
     overflow-y: auto;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #333;
     padding: 10px;
     border-radius: 5px;
+    background-color: #1e1e1e;
 }
 
 .listbox-frame ul {
@@ -49,6 +72,11 @@ body {
 
 .listbox-frame ul li {
     margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.listbox-frame ul li:hover {
+    background-color: #333;
 }
 
 .image-preview {
@@ -59,8 +87,8 @@ body {
     max-width: 100%;
     max-height: 400px;
     display: none;
-    border: 1px solid #ddd;
+    border: 1px solid #333;
     border-radius: 5px;
     padding: 5px;
-    background-color: #fff;
+    background-color: #1e1e1e;
 }

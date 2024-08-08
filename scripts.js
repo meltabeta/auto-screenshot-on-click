@@ -61,14 +61,26 @@ function stopCapturing() {
     console.log("Stopped capturing");
 }
 
-function saveSelectedImages() {
+async function saveSelectedImages() {
     const selectedIndices = screenshotVars.map((selected, index) => selected ? index : -1).filter(index => index !== -1);
-    selectedIndices.forEach(index => {
-        const link = document.createElement('a');
-        link.href = screenshots[index];
-        link.download = `screenshot_${Date.now()}_${index}.png`;
-        link.click();
+
+    if (selectedIndices.length === 0) {
+        alert("No images selected.");
+        return;
+    }
+
+    const zip = new JSZip();
+    selectedIndices.forEach((index, i) => {
+        const base64Image = screenshots[index].split(',')[1];
+        zip.file(`screenshot_${i + 1}.png`, base64Image, { base64: true });
     });
+
+    const content = await zip.generateAsync({ type: 'blob' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(content);
+    link.download = `screenshots_${Date.now()}.zip`;
+    link.click();
+
     alert(`Saved ${selectedIndices.length} images.`);
 }
 

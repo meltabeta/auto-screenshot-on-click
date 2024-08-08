@@ -5,10 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screen Capture Tool</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Add this line -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
 </head>
 <body>
     <div class="container">
+        <h1>Screen Capture Tool</h1>
+        <p class="description">
+            This tool allows you to capture screenshots of your screen at regular intervals. You can start, pause, and stop the capture process, view the captured screenshots, and save selected screenshots to your device.
+        </p>
+        <h2>User Guide</h2>
+        <ul class="user-guide">
+            <li><b>Start:</b> Begin capturing screenshots at regular intervals.</li>
+            <li><b>Pause:</b> Temporarily stop capturing screenshots.</li>
+            <li><b>Stop:</b> Permanently stop capturing screenshots.</li>
+            <li><b>View Captures:</b> Open a new window to view all captured screenshots.</li>
+            <li><b>Save Selected:</b> Save the selected screenshots to your device.</li>
+            <li><b>Select All:</b> Select all screenshots in the list.</li>
+            <li><b>Unselect All:</b> Unselect all screenshots in the list.</li>
+        </ul>
         <div class="control-frame">
             <button id="start-btn">Start</button>
             <button id="pause-btn">Pause</button>
